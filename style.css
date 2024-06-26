@@ -290,10 +290,14 @@ LIBRARY
 
 #results {
     margin: 0 auto;
+}
+
+.anime__cards {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .anime__card {
@@ -301,7 +305,9 @@ LIBRARY
     padding: 12px 0;
     border: 2px solid #242424;
     border-radius: 24px;
-    width: calc(100% / 4);
+    width: 25%;
+    height: 480px;
+    overflow: scroll;
 }
 
 .anime__card--container{
@@ -326,10 +332,11 @@ LIBRARY
     width: 200px;
 }
 
-.result__loading {
+/* .result__loading {
     display: flex;
     align-items: center;
     justify-content: center;
+    
     padding: 60px 0;
     font-size: 60px;
     color: #242424;
@@ -355,7 +362,7 @@ LIBRARY
     100% {
       transform: rotate(360deg);
     }
-  }
+  } */
 
 
 

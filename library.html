@@ -42,9 +42,9 @@
                 class="library__search--input"
                 type="search"
                 placeholder="Search by Title, Author, or Keyword"
-                oninput="onSearchChange(event)"
+                id="search"
               />
-              <button class="library__search--btn btn__hover-effect" onclick="searchEnter(event)">
+              <button class="library__search--btn btn__hover-effect" onclick="onSearchButtonClick()">
                 Search
               </button>
             </div>
@@ -78,9 +78,9 @@
                 </div>
             </div>
         </div>
-        <div class="result__loading">
+        <!-- <div class="result__loading">
             <i class="fas fa-spinner results__loading--spinner"></i>
-        </div>
+        </div> -->
     </section>
     <footer id="footer">
       <div class="footer__container">

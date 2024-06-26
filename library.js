@@ -3,7 +3,7 @@
 const animeList = document.querySelector(".anime__cards");
 
 async function renderAnime(results) {
-    const response = await fetch("https://api.jikan.moe/v4/anime?q=${results}");
+    const response = await fetch(`https://api.jikan.moe/v4/anime?q=${results}`);
     const animesInfo = await response.json();
     
     if (results === "ALPHABET_ASCEND") {
@@ -21,10 +21,9 @@ async function renderAnime(results) {
     .join("");
 }
 
-renderAnime(results);
-
-function onSearchChange(event) {
-    return results = event.target.value
+function onSearchButtonClick() {
+    const query = document.querySelector('#search').value;
+    renderAnime(query)
 }
 
 function filterAnime(event) {
@@ -35,7 +34,7 @@ function animeHTML(anime) {
   return `<div class="anime__card">
         <div class="anime__card--container">
             <figure class="anime__poster--wrapper">
-                <img src="${anime.image_url}" alt="" class="anime__poster" />
+                <img src="${anime.images.jpg.image_url}" alt="" class="anime__poster" />
             </figure>
             <h3 class="anime__title">${anime.title}</h3>
                 <p><b>Episodes:</b> ${anime.episodes}</p>
