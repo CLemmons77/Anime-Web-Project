@@ -1,15 +1,16 @@
 // API: https://api.jikan.moe/v4/anime
 
 const animeList = document.querySelector(".anime__cards");
+const resultLoading = document.querySelector(".result")
 
 async function renderAnime(results) {
-    animeList.classList += ' results__loading'
+    resultLoading.classList += ' results__loading'
     
     const response = await fetch(`https://api.jikan.moe/v4/anime?q=${results}`);
     const animesInfo = await response.json();
     
-    animeList.classList.remove('results__loading')
-    
+    resultLoading.classList.remove('results__loading')
+
     animeList.innerHTML = animesInfo.data
     .map((anime) => animeHTML(anime))
     .join("");
