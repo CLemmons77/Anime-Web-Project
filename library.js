@@ -3,31 +3,38 @@
 const animeList = document.querySelector(".anime__cards");
 
 async function renderAnime(results) {
+    animeList.classList += ' results__loading'
+    
     const response = await fetch(`https://api.jikan.moe/v4/anime?q=${results}`);
     const animesInfo = await response.json();
     
-    if (results === "ALPHABET_ASCEND") {
-        return anime.sort((a, b) => a.title - b.title)
-    }    
-    else if (results === "ALPHABET_DESCEND") {
-        return anime.sort((a, b) => b.title - a.title)
-    }    
-    else if (results === "RATING") {
-        return anime.sort((a, b) => a.rating - b.rating)
-    }    
-
-  animeList.innerHTML = animesInfo.data
+    animeList.classList.remove('results__loading')
+    
+    animeList.innerHTML = animesInfo.data
     .map((anime) => animeHTML(anime))
     .join("");
+    
+    
+    
+    
+}
+
+async function filterAnime(event) {
+    if (event === "ALPHABET_ASCEND") {
+        return results.sort((a, b) => a.anime.title - b.anime.title)
+    }    
+    else if (event === "ALPHABET_DESCEND") {
+        return anime.sort((a, b) => b.anime.title - a.anime.title)
+    }    
+    else if (event === "RATING") {
+        return anime.sort((a, b) => a.anime.score - b.anime.score)
+    }    
+    console.log(event)
 }
 
 function onSearchButtonClick() {
     const query = document.querySelector('#search').value;
     renderAnime(query)
-}
-
-function filterAnime(event) {
-    renderAnime(event.target.value)
 }
 
 function animeHTML(anime) {

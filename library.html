@@ -6,8 +6,8 @@
     <title>AniSearch-Library</title>
     <link rel="stylesheet" href="style.css" />
     <script
-    src="https://kit.fontawesome.com/c8e4d183c2.js"
-    crossorigin="anonymous"
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
     ></script>
     <script defer src="library.js"></script>
   </head>
@@ -20,12 +20,12 @@
             <li class="nav__list--item">
               <a
                 class="nav__link nav__link--primary link__hover-effect"
-                href="#"
+                href="index.html"
                 >Home</a
               >
             </li>
             <li class="nav__list--item">
-              <a class="nav__link link__hover-effect" href="">Library</a>
+              <a class="nav__link link__hover-effect" href="#">Library</a>
             </li>
             <li class="nav__list--item">
               <a class="nav__btn btn__hover-effect" href="">Contact</a>
@@ -44,55 +44,59 @@
                 placeholder="Search by Title, Author, or Keyword"
                 id="search"
               />
-              <button class="library__search--btn btn__hover-effect" onclick="onSearchButtonClick()">
+              <button
+                class="library__search--btn btn__hover-effect"
+                onclick="onSearchButtonClick()"
+              >
                 Search
               </button>
             </div>
             <select id="filter" onchange="filterAnime(event)">
-              <option value="" disabled selected>Sort</option>
-              <option value="ALPHABET_ASCEND">Alphabetical: Ascending</option>
-              <option value="ALPHABET_DESCEND">Alphabetical: Descending</option>
-              <option value="RATING">Rating</option>
+              <option class="filter__option" value="" disabled selected>
+                Sort
+              </option>
+              <option class="filter__option" value="ALPHABET_ASCEND">
+                Alphabetical: Ascending
+              </option>
+              <option class="filter__option" value="ALPHABET_DESCEND">
+                Alphabetical: Descending
+              </option>
+              <option class="filter__option" value="RATING">Rating</option>
             </select>
           </div>
         </div>
       </div>
     </section>
     <section id="results">
-        <div class="anime__cards">
-            <div class="anime__card">
-                <div class="anime__card--container">
-                    <figure class="anime__poster--wrapper">
-                        <img src="./assets/fairy-tail-poster-fillin.webp" alt="" class="anime__poster" />
-                    </figure>
-                    <h3 class="anime__title">Fairy Tail</h3>
-                    <p><b>Episodes:</b> 300</p>
-                    <p><b>Rating:</b> PG-13</p>
-                    <p><b>Score:</b> 8.5</p>
-                    <p>
-                        <b>Synopsis:</b>Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Veniam perspiciatis similique quasi sit numquam consectetur!
-                        Voluptate eligendi architecto facere nihil veniam velit corporis
-                        eveniet quo obcaecati soluta numquam, ex reiciendis.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="result__loading">
-            <i class="fas fa-spinner results__loading--spinner"></i>
+      <div class="anime__cards">
+        <!-- <div class="anime__card">
+          <div class="anime__card--container">
+            <figure class="anime__poster--wrapper">
+              <img src="./assets/fairy-tail-poster-fillin.webp" alt="" class="anime__poster" />
+            </figure>
+            <h3 class="anime__title">Search Results Here</h3>
+            <p><b>Episodes:</b> 323</p>
+            <p><b>Rating:</b> PG-13</p>
+            <p><b>Score:</b> 7.5</p>
+            <p></p>
+          </div>
         </div> -->
+        <div class="result">
+          <i class="fas fa-spinner results__loading--spinner"></i>
+        </div>
+      </div>
     </section>
     <footer id="footer">
       <div class="footer__container">
         <h3 class="footer__title">AniSearch</h3>
         <ul class="footer__links">
           <li class="footer__list--item">
-            <a class="footer__link link__hover-effect" href="#">Home</a>
+            <a class="footer__link link__hover-effect" href="index.html"
+              >Home</a
+            >
           </li>
           <li class="footer__list--item">
-            <a class="footer__link link__hover-effect" href="library.html"
-              >Library</a
-            >
+            <a class="footer__link link__hover-effect" href="#">Library</a>
           </li>
           <li class="footer__list--item">
             <a class="footer__link link__hover-effect" href="">Contact</a>

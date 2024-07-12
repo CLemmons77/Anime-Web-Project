@@ -11,6 +11,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+
+}
+
 li{
     list-style-type: none;
 }
@@ -195,6 +199,38 @@ h2 {
 .header__img {
     width: 100%;
 }
+
+.results__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    font-size: 60px;
+    color: #242424;
+  }
+
+  .results__loading--spinner {
+    display: none !important;
+  }
+
+  .results__loading .results__loading--spinner {
+    display: block !important;
+  }
+  
+  .fa-spinner {
+    animation: rotate 600ms infinite linear;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
 
 /* 
 
