@@ -38,18 +38,20 @@
           <h1>Explore our library of anime titles!</h1>
           <div class="library__header">
             <div class="library__search">
-              <input
-                class="library__search--input"
-                type="search"
-                placeholder="Search by Title, Author, or Keyword"
-                id="search"
-              />
-              <button
-                class="library__search--btn btn__hover-effect"
-                onclick="onSearchButtonClick()"
-              >
-                Search
-              </button>
+              <form action="" onsubmit="onSearchButtonClick(event)">
+                <input
+                  class="library__search--input"
+                  type="search"
+                  placeholder="Search by Title, Author, or Keyword"
+                  id="search"
+                />
+                <button
+                  class="library__search--btn btn__hover-effect"
+                  onclick="onSearchButtonClick()"
+                >
+                  Search
+                </button>
+              </form>
             </div>
             <select id="filter" onchange="filterAnime(event)">
               <option class="filter__option" value="" disabled selected>
@@ -61,7 +63,7 @@
               <option class="filter__option" value="ALPHABET_DESCEND">
                 Alphabetical: Descending
               </option>
-              <option class="filter__option" value="RATING">Rating</option>
+              <option class="filter__option" value="RATING">Score</option>
             </select>
           </div>
         </div>
