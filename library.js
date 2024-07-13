@@ -6,13 +6,13 @@ const resultLoading = document.querySelector(".result")
 async function renderAnime(results) {
     resultLoading.classList += ' results__loading'
     
-    const response = await fetch(`https://api.jikan.moe/v4/anime?q=${results || "no search results"}`);
+    const response = await fetch(`https://api.jikan.moe/v4/anime?q=${results}`);
     const animesInfo = await response.json();
     
     resultLoading.classList.remove('results__loading')
 
     animeList.innerHTML = animesInfo.data
-    .slice(0, 9)
+    .slice(0, 6)
     .map((anime) => animeHTML(anime))
     .join("");
 
@@ -27,7 +27,7 @@ async function intialAnime() {
     resultLoading.classList.remove('results__loading')
 
     animeList.innerHTML = animesInfo.data
-    .slice(0, 9)
+    .slice(0, 3)
     .map((anime) => animeHTML(anime))
     .join("");
 }
@@ -45,10 +45,10 @@ async function filterAnime(event) {
         const scoreB = parseFloat(b.querySelector(".anime__score").textContent);
 
         if (filterValue === "ALPHABET_ASCEND") {
-            return titleA.localeCompare(titleB);
+            return titleA.localCompare(titleB);
         }
         else if (filterValue === "ALPHABET_DESCEND") {
-            return titleB.localeCompare(titleA);
+            return titleB.localCompare(titleA);
         }
         else if (filterValue === "RATING") {
             return scoreB - scoreA;
