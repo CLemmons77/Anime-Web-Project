@@ -296,7 +296,7 @@ LIBRARY
 
 .anime__card {
     margin: 36px;
-    padding: 12px 0;
+    padding: 12px 4px;
     border: 2px solid #242424;
     border-radius: 24px;
     width: 25%;
@@ -324,6 +324,11 @@ LIBRARY
 
 .anime__poster {
     width: 200px;
+}
+
+#filter {
+    width: 100%;
+    max-width: 120px;
 }
 
 .results__loading {
@@ -374,6 +379,17 @@ LIBRARY
     .search__btn {
         font-size: 24px;
     }
+    .anime__card {
+        width: 50%;
+    }
+    .library__search--input, .library__search--btn {
+        font-size: 12px;
+        margin: 4px 0;
+    }
+    #filter {
+        width: 100%; 
+        max-width: 80px;
+    }
 }
 
 /* SMALL PHONES */
@@ -398,6 +414,9 @@ LIBRARY
     .search__btn {
         font-size: 20px;
         margin: 8px 0 0 0;
+        width: 100%;
+    }
+    .anime__card {
         width: 100%;
     }
 }
