@@ -6,10 +6,9 @@
     <title>AniSearch</title>
     <link rel="stylesheet" href="style.css" />
     <script
-    src="https://kit.fontawesome.com/c8e4d183c2.js"
-    crossorigin="anonymous"
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
     <script src="library.js"></script>
   </head>
   <body>
@@ -19,17 +18,83 @@
           <h1 class="nav__title">AniSearch</h1>
           <ul class="nav__links">
             <li class="nav__list--item">
-              <a class="nav__link nav__link--primary link__hover-effect" href="#">Home</a>
+              <a
+                class="nav__link nav__link--primary link__hover-effect"
+                href="#"
+                >Home</a
+              >
             </li>
             <li class="nav__list--item">
-              <a class="nav__link link__hover-effect" href="library.html">Library</a>
+              <a class="nav__link link__hover-effect" href="library.html"
+                >Library</a
+              >
             </li>
             <li class="nav__list--item">
-              <a class="nav__btn btn__hover-effect" href="">Contact</a>
+              <a class="nav__btn btn__hover-effect"
+                ><button class="nav__btn--click" onclick="toggleModal()">
+                  Contact
+                </button></a
+              >
             </li>
           </ul>
         </div>
       </nav>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            Here's a bit about me.
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Engineer
+          </h4>
+          <p class="modal__para">
+            I'm a 23 year-old American
+            <b class="secondary__clr">frontend software engineer</b> with a
+            passion for creating websites with intuitive and clean
+            <b class="secondary__clr">user interfaces.</b>
+            <br />
+            I currently work on extremely difficult engineering problems and
+            learn from a team that consists of some of the most
+            <b class="secondary__clr">gifted</b> and
+            <b class="secondary__clr">experienced</b> software engineers daily.
+          </p>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">
+            I'm currently open to new opportunities.
+          </h4>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea
+                class="input"
+                name="message"
+                type="text"
+                required
+              ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking with you soon.
+          </div>
+        </div>
+      </div>
       <header>
         <div class="header__container">
           <div class="header__text">
@@ -40,27 +105,43 @@
               favorite series!
             </h2>
             <div class="header__search">
-              <a class="search__btn btn__hover-effect" href="library.html">Search Our Library</a>
+              <a class="search__btn btn__hover-effect" href="library.html"
+                >Search Our Library</a
+              >
             </div>
           </div>
           <div class="header__img--container">
             <figure class="header__img--wrapper">
-                <img src="./assets/anime girl at pc.jpg" alt="" class="header__img">
+              <img
+                src="./assets/anime girl at pc.jpg"
+                alt=""
+                class="header__img"
+              />
             </figure>
           </div>
         </div>
       </header>
     </section>
     <footer id="footer">
-        <div class="footer__container">
-            <h3 class="footer__title">AniSearch</h3>
-            <ul class="footer__links">
-                <li class="footer__list--item"><a class="footer__link link__hover-effect" href="#">Home</a></li>
-                <li class="footer__list--item"><a class="footer__link link__hover-effect" href="library.html">Library</a></li>
-                <li class="footer__list--item"><a class="footer__link link__hover-effect" href="">Contact</a></li>
-            </ul>
-            <div class="footer__copyright">Copyright © 2024 Caleb Lemmons</div>
-        </div>
+      <div class="footer__container">
+        <h3 class="footer__title">AniSearch</h3>
+        <ul class="footer__links">
+          <li class="footer__list--item">
+            <a class="footer__link link__hover-effect" href="#">Home</a>
+          </li>
+          <li class="footer__list--item">
+            <a class="footer__link link__hover-effect" href="library.html"
+              >Library</a
+            >
+          </li>
+          <li class="footer__list--item">
+            <a class="footer__link link__hover-effect"><button class="nav__btn--click" onclick="toggleModal()">
+              Contact
+            </button></a>
+          </li>
+        </ul>
+        <div class="footer__copyright">Copyright © 2024 Caleb Lemmons</div>
+      </div>
     </footer>
   </body>
 </html>
